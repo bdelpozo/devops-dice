@@ -54,7 +54,10 @@ pipeline{
                 script{
                     try{
                         sh 'docker run --name $project $registry'
-                    }finally{
+                    }catch (Exception e){
+                        currentBuild.result = 'FAILURE'
+                    }
+                    finally{
                         sh 'docker rm $project'
                     }
 
@@ -80,7 +83,9 @@ pipeline{
             }
         }
         success{
-            echo 'Pipeline ended with success'
+            script{
+                echo 'Pipeline succeeded'
+            }
         }
     }
 }
