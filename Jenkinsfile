@@ -56,6 +56,7 @@ pipeline{
                         sh 'docker run --name $project $registry'
                     }catch (Exception e){
                         currentBuild.result = 'FAILURE'
+                         error("Pipeline failed")
                     }
                     finally{
                         sh 'docker rm $project'
