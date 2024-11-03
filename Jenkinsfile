@@ -79,8 +79,8 @@ pipeline{
                 echo "Pipeline failed"
             }
         }
-        always{
-            echo 'Register Build'
+        success{
+            echo 'Pipeline ended with success'
         }
     }
 }
