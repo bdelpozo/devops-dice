@@ -3,7 +3,7 @@ from time import sleep
 
 
 def roll(amount:int, sides:int):
-    return dice.roll(f'{amount}d{sides}')
+    return amount/0
 
 for idx, result in enumerate(roll(6,6)):
     print(f'Lanzamiento {idx+1} número obtenido {result}')
